@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from '../http.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -13,12 +14,16 @@ import { HttpService } from '../http.service';
 })
 export class CreateBookingComponent {
   
-  constructor(private datepipe:DatePipe, private fb:FormBuilder, private http:HttpService){}
+  constructor(private datepipe:DatePipe, private fb:FormBuilder, private http:HttpService, private activateRoute:ActivatedRoute){
+    this.selectedID = this.activateRoute.snapshot.queryParamMap.get('id')
+    console.log("id recieved in create booking compo", this.selectedID)
+  }
 
   
 
   travelRegForm!:FormGroup
   isUpdating: any;
+  selectedID:string|null = null
 
 ngOnInit(){
   this.bookingfn() 

@@ -8,7 +8,7 @@
   
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
-        <td mat-cell *matCellDef="let row"> <mat-icon (click)="openDialog()"  class="action_icon" aria-hidden="false" aria-label="Example home icon" fontIcon="border_color"></mat-icon> &nbsp; &nbsp; &nbsp;
+        <td mat-cell *matCellDef="let row"> <mat-icon (click)="openDialog()"routerLink="/create" [queryParams]="{'id':row.id}" class="action_icon" aria-hidden="false" aria-label="Example home icon" fontIcon="border_color"></mat-icon> &nbsp; &nbsp; &nbsp;
             <mat-icon class="action_icon" aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon> </td>
       </ng-container>
 
