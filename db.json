@@ -1,0 +1,100 @@
+{
+  "bookings": [
+    {
+      "id": "1",
+      "source": "delhi",
+      "destination": "mumbai",
+      "room": "1A1R",
+      "checkin": "1/8/2025",
+      "checkout": "3/8/2025"
+    },
+    {
+      "id": "2",
+      "source": "bangalore",
+      "destination": "kolkata",
+      "room": "2A1R",
+      "checkin": "2/8/2025",
+      "checkout": "5/8/2025"
+    },
+    {
+      "id": "3",
+      "source": "hyderabad",
+      "destination": "pune",
+      "room": "3A2R",
+      "checkin": "10/8/2025",
+      "checkout": "15/8/2025"
+    },
+    {
+      "id": "4",
+      "source": "chennai",
+      "destination": "lucknow",
+      "room": "2A1R",
+      "checkin": "7/9/2025",
+      "checkout": "12/9/2025"
+    },
+    {
+      "id": "5",
+      "source": "jaipur",
+      "destination": "ahmedabad",
+      "room": "1A1R",
+      "checkin": "15/8/2025",
+      "checkout": "18/8/2025"
+    },
+    {
+      "id": "6",
+      "source": "goa",
+      "destination": "delhi",
+      "room": "3A2R",
+      "checkin": "3/10/2025",
+      "checkout": "8/10/2025"
+    },
+    {
+      "id": "7",
+      "source": "kanpur",
+      "destination": "mumbai",
+      "room": "2A1R",
+      "checkin": "20/7/2025",
+      "checkout": "22/7/2025"
+    },
+    {
+      "id": "8",
+      "source": "nagpur",
+      "destination": "surat",
+      "room": "1A1R",
+      "checkin": "25/8/2025",
+      "checkout": "30/8/2025"
+    },
+    {
+      "id": "9",
+      "source": "dehradun",
+      "destination": "chandigarh",
+      "room": "2A1R",
+      "checkin": "1/11/2025",
+      "checkout": "4/11/2025"
+    },
+    {
+      "id": "10",
+      "source": "trivandrum",
+      "destination": "kochi",
+      "room": "3A2R",
+      "checkin": "12/8/2025",
+      "checkout": "15/8/2025"
+    },
+    {
+      "id": "11",
+      "source": "visakhapatnam",
+      "destination": "bhubaneswar",
+      "room": "2A1R",
+      "checkin": "5/9/2025",
+      "checkout": "8/9/2025"
+    },
+    {
+      "id": "1d54",
+      "source": "goa",
+      "destination": "nagpur",
+      "start": "2025-01-11",
+      "end": "2025-01-13",
+      "room": "2A1R"
+    }
+  ]
+}

@@ -1,16 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Trial1Component } from './trial1/trial1.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateBookingComponent } from './travel/create-booking/create-booking.component';
+import { DisplayBookingComponent } from './travel/display-booking/display-booking.component';
+import { HomeComponent } from './travel/home/home.component';
+import { AngMatModule } from './ang-mat/ang-mat.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Trial1Component,
+    CreateBookingComponent,
+    DisplayBookingComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    AngMatModule,
+    ReactiveFormsModule,
+    HttpClientModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

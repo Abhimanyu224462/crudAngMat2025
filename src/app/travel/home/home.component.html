@@ -1,0 +1,19 @@
+
+<mat-toolbar color = accent class="shadow">
+  <div class="border border-danger border-3 rounded-3 shadow-lg d-flex" style="background-color: rgb(247, 228, 229);">
+        <span class="fw-bold fs-3  text-danger-emphasis p-1">CRUD</span> 
+        <div class="d-flex flex-column mt-2 me-1 text-danger" style="line-height: 1;">
+          <span style="font-size: 12px;">Angular</span>
+          <span style="font-size: 12px;">Material</span>
+        </div>
+  </div>
+    
+    <button class="btn btn-danger mx-3 d-flex"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>Home</button>
+    <button class="btn btn-danger mx-3 d-flex" (click)="openDialog()"><mat-icon class="" aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon> Create Booking</button>
+    <button class="btn btn-danger mx-3 d-flex" routerLink="/display"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="dvr"></mat-icon> Display Booking</button>
+    <span class="example-spacer"></span>
+    <button class="btn btn-danger mx-3 d-flex"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="filter_alt"></mat-icon>Filter</button>
+
+  </mat-toolbar>
+  
+
