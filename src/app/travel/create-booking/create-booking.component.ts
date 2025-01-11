@@ -17,9 +17,8 @@ export class CreateBookingComponent {
   constructor(private datepipe:DatePipe, private fb:FormBuilder, private http:HttpService, private activateRoute:ActivatedRoute){
     this.selectedID = this.activateRoute.snapshot.queryParamMap.get('id')
     console.log("id recieved in create booking compo", this.selectedID)
+    this.getToUpdate()
   }
-
-  
 
   travelRegForm!:FormGroup
   isUpdating: any;
@@ -27,6 +26,7 @@ export class CreateBookingComponent {
 
 ngOnInit(){
   this.bookingfn() 
+
 }
 
 textFormControl = new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*'), Validators.minLength(1)]);
@@ -39,38 +39,39 @@ start: new FormControl<Date | null>(null),
 end: new FormControl<Date | null>(null),
 room:['']
 })
-this.travelRegForm.valueChanges.subscribe((value) => {
-  if (!this.isUpdating) {
-    this.isUpdating = true; // Prevent recursion
-    if (value.start instanceof Date) {
-      this.travelRegForm.patchValue(
-        {
-          start: this.formatDate(value.start),
-        },
-        { emitEvent: false }
-      );
-    }
-    if (value.end instanceof Date) {
-      this.travelRegForm.patchValue(
-        {
-          end: this.formatDate(value.end),
-        },
-        { emitEvent: false }
-      );
-    }
-    this.isUpdating = false; // Reset the flag
-  }
-});
+// this.travelRegForm.valueChanges.subscribe((value) => {
+//   if (!this.isUpdating) {
+//     this.isUpdating = true; // Prevent recursion
+//     if (value.start instanceof Date) {
+//       this.travelRegForm.patchValue(
+//         {
+//           start: this.formatDate(value.start),
+//         },
+//         { emitEvent: false }
+//       );
+//     }
+//     if (value.end instanceof Date) {
+//       this.travelRegForm.patchValue(
+//         {
+//           end: this.formatDate(value.end),
+//         },
+//         { emitEvent: false }
+//       );
+//     }
+//     this.isUpdating = false; // Reset the flag
+//   }
+// });
 }
 
 formatDate(date: Date | string): string | null {
-  return this.datepipe.transform(date, 'yyyy-MM-dd') // Adjust format as needed
+  return this.datepipe.transform(date, 'yyyy/MM/dd') // Adjust format as needed
 }
 
 submit() {
 console.log("form data", this.travelRegForm.value)
 console.log("entire form data", this.travelRegForm)
-this.postData()
+this.bookingfn()
+
 }
 
 //POST
@@ -78,10 +79,33 @@ postData(){
   this.http.postDataToServer('bookings',this.travelRegForm.value).subscribe({
     next:(response:any)=>{
       console.log("response recieved",response)
+      this.bookingfn()
     }
   })
 }
 
+//PUT
+getToUpdate(){
+  const endpoint = 'bookings/' + this.selectedID
+  this.http.getDataFromServer(endpoint).subscribe({
+    next:(resp:any) => {
+      console.log("response to patch", resp)
+      this.travelRegForm.patchValue(resp)
+    }
+  })
+}
+
+updatedata(){
+  const endpoint = 'bookings/' + this.selectedID
+  this.http.putDataToServer(endpoint,this.travelRegForm.value).subscribe({
+    next:(response:any) => {
+      if(response && response.length>0){
+        console.log("data according to selected id", response)
+        this.bookingfn()
+      }
+    }
+  })
+}
 
   // source:any
   // destination:any

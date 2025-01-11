@@ -26,4 +26,11 @@ export class HttpService {
     const url = this.baseurl + endpoint
     return this.httpClient.post(url,requestBody,{headers:this.headers})
   }
+
+  //PUT
+  putDataToServer(endpoint:string,requestBody:any):Observable<any>{
+const url = this.baseurl + endpoint
+return this.httpClient.put(url,requestBody,{headers:this.headers})
+  }
+
 }

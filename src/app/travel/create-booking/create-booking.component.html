@@ -50,11 +50,12 @@
           <!-- <p>Selected range: {{range.value | json}}</p> -->
           <!-- <button class="btn btn-danger mx-5" mat-button mat-dialog-close routerLink="/display">Submit</button> -->
           <div class="d-flex" style=" justify-content: flex-end; align-items: flex-end;">
-            <button type="submit" class="btn btn-danger mx-2 mb-3" mat-button mat-dialog-close routerLink="/display" >Submit</button>
+            <button type="submit" class="btn btn-danger mx-2 mb-3" mat-button mat-dialog-close routerLink="/display" (click)="postData()" >Submit</button> &nbsp;
+            
           </div>
           
         </form>
-  
+        <button type="submit" class="btn btn-danger mx-2 mb-3" mat-button mat-dialog-close (click)="updatedata()" >Update</button>
 </div>
  </div>   
 

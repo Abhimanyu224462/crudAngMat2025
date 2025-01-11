@@ -23,7 +23,7 @@ export class DisplayBookingComponent {
   @ViewChild(MatSort) sort!: MatSort;
 
   bookingData: any
-  displayedColumns: string[] = ['actions','id', 'source', 'destination', 'checkin', 'checkout', 'room'];
+  displayedColumns: string[] = ['actions','id', 'source', 'destination', 'start', 'end', 'room'];
   dataSource!: MatTableDataSource<UserData>;
 
   ngOnInit() {
@@ -59,8 +59,8 @@ export interface UserData {
   id: string;
   source: string;
   destination: string;
-  checkin: string;
-  checkout: string;
+  start: string;
+  end: string;
   room: string;
 }
 

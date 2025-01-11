@@ -27,14 +27,14 @@
         <td mat-cell *matCellDef="let row"> {{row.destination | titlecase}} </td>
       </ng-container>
   
-      <ng-container matColumnDef="checkin">
+      <ng-container matColumnDef="start">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> CheckIn </th>
-        <td mat-cell *matCellDef="let row"> {{row.checkin}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.start}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="checkout">
+      <ng-container matColumnDef="end">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> CheckOut </th>
-        <td mat-cell *matCellDef="let row"> {{row.checkout}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.end}} </td>
       </ng-container>
 
       <ng-container matColumnDef="room">
