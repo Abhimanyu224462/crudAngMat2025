@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { HttpService } from '../http.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateBookingComponent } from '../create-booking/create-booking.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-display-booking',
@@ -13,10 +14,21 @@ import { CreateBookingComponent } from '../create-booking/create-booking.compone
 })
 export class DisplayBookingComponent {
 
-  constructor(private http: HttpService, public dialog: MatDialog) { }
+  constructor(private http: HttpService, public dialog: MatDialog, private router:Router) { }
   
+  
+    // openDialog() {
+    //   this.dialog.open(CreateBookingComponent);
+    // }
+redirectTo(id:any){
+  this.router.navigate([], {
+    queryParams:{id:id, action:'edit'}
+  })
+}
     openDialog() {
-      this.dialog.open(CreateBookingComponent);
+      setTimeout(() => {
+        this.dialog.open(CreateBookingComponent);
+      }, 1);
     }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
