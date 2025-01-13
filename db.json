@@ -175,38 +175,6 @@
       "start": "2025-01-21T18:30:00.000Z",
       "end": "2025-01-23T18:30:00.000Z",
       "room": "1A1R"
-    },
-    {
-      "id": "25b3",
-      "source": "usa",
-      "destination": "washington",
-      "start": "2025-01-20T18:30:00.000Z",
-      "end": "2025-01-22T18:30:00.000Z",
-      "room": "2A1R"
-    },
-    {
-      "id": "6a02",
-      "source": "washington dc",
-      "destination": "los angels",
-      "start": "2025-01-22T18:30:00.000Z",
-      "end": "2025-01-23T18:30:00.000Z",
-      "room": "3A2R"
-    },
-    {
-      "id": "e4bd",
-      "source": "nashik",
-      "destination": "jalgaon",
-      "start": "2025-01-21T18:30:00.000Z",
-      "end": "2025-01-22T18:30:00.000Z",
-      "room": "1A1R"
-    },
-    {
-      "id": "2a2d",
-      "source": "deolali",
-      "destination": "karanja",
-      "start": "2025-01-21T18:30:00.000Z",
-      "end": "2025-01-22T18:30:00.000Z",
-      "room": "1A1R"
     }
   ]
 }

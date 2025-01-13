@@ -1,60 +1,54 @@
-
-
- <div class="container mt-3">
+<div class="container mt-3">
   <div mat-dialog-actions>
     <form class="example-form" [formGroup]="travelRegForm">
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Source</mat-label>
-          <input type="text" matInput  placeholder="Source City"  formControlName="source">
-          <mat-error *ngIf="textFormControl.hasError('pattern') && !textFormControl.hasError('required')">
-            Please enter a valid City Name
-          </mat-error>
-          <mat-error *ngIf="textFormControl.hasError('required')">
-            City is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Destination</mat-label>
-            <input type="text" matInput  placeholder="Destination City" formControlName="destination">
-            <mat-error *ngIf="textFormControl.hasError('pattern') && !textFormControl.hasError('required')">
-              Please enter a valid City Name
-            </mat-error>
-            <mat-error *ngIf="textFormControl.hasError('required')">
-              City is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-          
-          <mat-form-field>
-            <mat-label>Room Type</mat-label>
-            <mat-select formControlName="room">
-              <mat-option value="1A1R">1 Adult, 1 Room</mat-option>
-              <mat-option value="2A1R">2 Adult, 1 Room</mat-option>
-              <mat-option value="3A2R">3 Adult, 2 Room</mat-option>
-            </mat-select>
-          </mat-form-field>
-<br>
-          <mat-form-field>
-            <mat-label>Enter a date range</mat-label>
-            <mat-date-range-input  [rangePicker]="picker">
-              <input matStartDate formControlName="start" placeholder="Start date">
-              <input matEndDate formControlName="end" placeholder="End date" >
-            </mat-date-range-input>
-            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-date-range-picker #picker></mat-date-range-picker>
-          
-            
-          </mat-form-field>
-          
-          <!-- <p>Selected range: {{range.value | json}}</p> -->
-          <!-- <button class="btn btn-danger mx-5" mat-button mat-dialog-close routerLink="/display">Submit</button> -->
-          <div class="d-flex" style=" justify-content: flex-end; align-items: flex-end;">
-            <button type="submit" class="btn btn-danger mx-2 mb-3" mat-button mat-dialog-close routerLink="/display" (click)="submit()" (click)="reload()" >Submit</button> &nbsp;
-            
-          </div>
-          
-        </form>
-</div>
- </div>   
+      <mat-form-field class="example-full-width">
+        <mat-label>Source</mat-label>
+        <input type="text" matInput placeholder="Source City" formControlName="source">
+        <mat-error *ngIf="textFormControl.hasError('pattern') && !textFormControl.hasError('required')">
+          Please enter a valid City Name
+        </mat-error>
+        <mat-error *ngIf="textFormControl.hasError('required')">
+          City is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
 
+      <mat-form-field class="example-full-width">
+        <mat-label>Destination</mat-label>
+        <input type="text" matInput placeholder="Destination City" formControlName="destination">
+        <mat-error *ngIf="textFormControl.hasError('pattern') && !textFormControl.hasError('required')">
+          Please enter a valid City Name
+        </mat-error>
+        <mat-error *ngIf="textFormControl.hasError('required')">
+          City is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Room Type</mat-label>
+        <mat-select formControlName="room">
+          <mat-option value="1A1R">1 Adult, 1 Room</mat-option>
+          <mat-option value="2A1R">2 Adult, 1 Room</mat-option>
+          <mat-option value="3A2R">3 Adult, 2 Room</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate formControlName="start" placeholder="Start date">
+          <input matEndDate formControlName="end" placeholder="End date">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+
+      <div class="d-flex" style=" justify-content: flex-end; align-items: flex-end;">
+        <button type="submit" class="btn btn-danger mx-2 mb-3" mat-button mat-dialog-close routerLink="/display"
+          (click)="submit()" (click)="reload()">Submit</button> &nbsp;
+      </div>
+
+    </form>
+  </div>
+</div>

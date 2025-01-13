@@ -7,30 +7,36 @@ import { Observable } from 'rxjs';
 })
 export class HttpService {
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   baseurl = "http://localhost:3000/"
 
-  headers:HttpHeaders = new HttpHeaders({
-    "content-type":"application/json"
+  headers: HttpHeaders = new HttpHeaders({
+    "content-type": "application/json"
   })
 
   // GET
-  getDataFromServer(endpoint:string):Observable<any>{
+  getDataFromServer(endpoint: string): Observable<any> {
     const url = this.baseurl + endpoint
-    return this.httpClient.get(url, {headers:this.headers})
+    return this.httpClient.get(url, { headers: this.headers })
   }
 
   // POST
-  postDataToServer(endpoint:any,requestBody:any):Observable<any>{
+  postDataToServer(endpoint: any, requestBody: any): Observable<any> {
     const url = this.baseurl + endpoint
-    return this.httpClient.post(url,requestBody,{headers:this.headers})
+    return this.httpClient.post(url, requestBody, { headers: this.headers })
   }
 
   //PUT
-  putDataToServer(endpoint:string,requestBody:any):Observable<any>{
-const url = this.baseurl + endpoint
-return this.httpClient.put(url,requestBody,{headers:this.headers})
+  putDataToServer(endpoint: string, requestBody: any): Observable<any> {
+    const url = this.baseurl + endpoint
+    return this.httpClient.put(url, requestBody, { headers: this.headers })
+  }
+
+  //DELETE
+  deleteDataFromServer(endpoint: string): Observable<any> {
+    const url = this.baseurl + endpoint
+    return this.httpClient.delete(url, { headers: this.headers })
   }
 
 }
